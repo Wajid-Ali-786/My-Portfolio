@@ -1,0 +1,351 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background: url('../images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    transition: background 0.5s ease;
+  }
+  
+  /* Dark Mode Hero Section */
+  body.dark-mode #hero {
+    background: url('../images/hero-background-dark.jpg') no-repeat center center/cover;
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Smooth fade-in animation for interactive message */
+  #magicMessage {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Update Navbar in Dark Mode */
+  body.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+  }
+  
+  body.dark-mode .navbar-brand,
+  body.dark-mode .nav-link {
+    color: #e0e0e0 !important;
+  }
+  
+  /* Update Footer */
+  body.dark-mode footer {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0 !important;
+  }
+  
+  /* Dark Mode Card Styles */
+  body.dark-mode .card {
+    background-color: #1f1f1f !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+  }
+  
+  /* Dark Mode Buttons */
+  body.dark-mode .btn {
+    background-color: #ff9800 !important;
+    color: #121212 !important;
+    border: none;
+  }
+  
+  body.dark-mode .btn:hover {
+    background-color: #ffb74d !important;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive Media Queries for Unique Views */
+  @media (max-width: 768px) {
+    /* Adjust hero text size on smaller devices */
+    #hero h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet-specific styling */
+    #hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    /* Desktop-specific styling */
+    #hero h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --navbar-bg: #f8f9fa;
+    --navbar-text: #333333;
+    --card-bg: #ffffff;
+    --card-border: #dddddd;
+    --footer-bg: #f8f9fa;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+  }
+  
+  /* Light mode styles */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .navbar {
+    background-color: var(--navbar-bg);
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: var(--navbar-text) !important;
+  }
+  
+  .card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+  }
+  
+  footer {
+    background-color: var(--footer-bg);
+  }
+  
+  .btn {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+  }
+  
+  .btn:hover {
+    background-color: var(--button-hover);
+  }
+  
+  /* Dark mode overrides */
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --navbar-bg: #1f1f1f;
+    --navbar-text: #e0e0e0;
+    --card-bg: #1f1f1f;
+    --card-border: #333333;
+    --footer-bg: #1f1f1f;
+    --button-bg: #ff9800;
+    --button-hover: #ffb74d;
+  }
+  
+  body.dark-mode * {
+    color: var(--text-color) !important;
+    background-color: var(--bg-color) !important;
+  }
+
+
+  /* Contact Information and Form Layout */
+#contact-form .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #contact-form .col-md-6 {
+    padding: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    #contact-form .row {
+      flex-direction: column;
+    }
+  
+    #contact-form .col-md-6 {
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+  }
+  
+  .modal-overlay.show {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1000;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal-content input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+  }
+  
+  .modal-content button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    width: 30%;
+    border: none;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background: #0056b3;
+  }
+  
+
+  body.dark-mode #magicButton {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+}
+
+body.dark-mode #magicButton:hover {
+    background-color: var(--button-hover);
+}
+
+
+
+/* 📌 General Styling */
+#timeContainer {
+    text-align: center;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff7eb3);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    margin: 20px auto;
+    display: inline-block;
+    position: fixed;
+    z-index: 999;
+    top: 50px;
+    right: 20px;
+    animation: fadeIn 1s infinite;
+}
+
+/* Text Styling */
+#timeContainer h2 {
+    font-size: 20px;
+    font-weight: bold;
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#timeContainer p {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* 🌙 Dark Mode Styling */
+body.dark-mode #timeContainer {
+    background: linear-gradient(135deg, #333, #222);
+    color: #ff9800;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+}
+
+/* ⏳ Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 1; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.mygame {
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff0da1, #ff007a);
+    color: white;
+    padding: 12px 25px;
+    border: 3px solid #098b05;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    animation: pulse 1.5s infinite;
+    position: relative;
+}
+
+/* Hover Effect */
+.mygame:hover {
+    background: linear-gradient(45deg, #ff007a, #ff0da1);
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    border-color: #05c805;
+}
+
+/* Font Awesome Icon Styling */
+.mygame i {
+    margin: 0 5px;
+    color: yellow;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate Icons on Hover */
+.mygame:hover i {
+    transform: rotate(360deg);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.p-mygame {
+    font-size: 22px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}

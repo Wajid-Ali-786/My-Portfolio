@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | My Advanced Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+ 
+</head>
+<body>
+<!-- Header with Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNavbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <!-- Icon-Based Dark Mode Toggle -->
+            <li class="nav-item ms-3">
+              <button id="darkModeToggle" class="btn btn-outline-secondary">
+                <!-- Initial icon will be set via JS on page load -->
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  
+
+  <!-- Main Content -->
+  <main>
+    <!-- Contact Hero Section -->
+    <section id="contact-hero" class="py-5 text-center bg-info text-white">
+      <div class="container">
+        <h1>Contact Me</h1>
+        <p class="lead">I'd love to hear from you. Let's get in touch!</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+ 
+<section id="contact-form" class="py-5">
+    <div class="container">
+        <div class="row">
+          <!-- Contact Information (Left Side) -->
+          <div class="col-md-6">
+            <h2 class="mb-4">Get In Touch</h2>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-map-marker-alt me-2"></i>Ghakhar, Gujranwala, Pakistan</li>
+              <li><i class="fas fa-phone-alt me-2"></i> +92 343-5060-128</li>
+              <li><i class="fas fa-envelope me-2"></i>aliwajid5060@gmail.com</li>
+              <li><i class="fas fa-globe me-2"></i><a href="https://www.linkedin.com/in/wajid-ali-31b818337/" target="_blank" style="text-decoration: none;"> https://www.linkedin.com/in/wajid-ali-31b818337</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Form (Right Side) -->
+          <div class="col-md-6">
+            <h2 class="mb-4">Send a Message</h2>
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label"><i class="fas fa-user me-2"></i>Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label"><i class="fas fa-envelope me-2"></i>Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+              <div class="mb-3">
+                <label for="subject" class="form-label"><i class="fas fa-comment me-2"></i>Subject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a subject.</div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label"><i class="fas fa-pencil-alt me-2"></i>Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Your message here"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">Please enter your message.</div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+            <!-- Success Message (initially hidden) -->
+            <div id="successMessage" class="alert alert-success mt-4 d-none" role="alert">
+              Thank you for your message! I'll get back to you soon.
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  
+
+
+  </main>
+  <div id="timeContainer">
+    <h2>⏳ Current Time:</h2> 
+    <p id="timeDisplay">Loading...</p> 
+    <p id="dateDisplay">Loading...</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2025 Portfolio of Wajid Ali. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="assets/js/scripts.js"></script>
+  <!-- Inline Script: Form Validation and Submission Handling -->
+  <script>
+    // Bootstrap form validation
+    (function () {
+      'use strict';
+      var form = document.getElementById('contactForm');
+
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          // Prevent actual submission for demo purposes
+          event.preventDefault();
+          // Hide the form and display a success message
+          form.classList.add('d-none');
+          document.getElementById('successMessage').classList.remove('d-none');
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>
+
+   
+</body>
+</html>
